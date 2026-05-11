@@ -3,6 +3,36 @@ export interface SubService {
   points: string[];
 }
 
+export interface QualificationRow {
+  qualification: string;
+  institution: string;
+}
+
+export interface CertificationItem {
+  title: string;
+  description: string;
+}
+
+export interface ExperienceGroup {
+  heading: string;
+  points: string[];
+}
+
+export interface SkillRow {
+  domain: string;
+  skills: string;
+}
+
+export interface ServiceQualifications {
+  intro: string;
+  academicQualifications: QualificationRow[];
+  certifications: CertificationItem[];
+  experienceIntro: string;
+  experienceGroups: ExperienceGroup[];
+  cpdStatement: string;
+  skillsTable: SkillRow[];
+}
+
 export interface ServiceDetail {
   slug: string;
   title: string;
@@ -12,6 +42,7 @@ export interface ServiceDetail {
   subServicesTitle: string;
   subServices: SubService[];
   image: string;
+  qualifications?: ServiceQualifications;
 }
 
 export const services: ServiceDetail[] = [
@@ -162,6 +193,199 @@ export const services: ServiceDetail[] = [
         ],
       },
     ],
+  },
+  {
+    slug: "clinical-capability",
+    title: "Clinical Capability",
+    tagline: "Hospital-grade expertise, in your community",
+    blurb:
+      "Advanced clinical support delivered by qualified Registered Nurses — bringing the depth and precision of acute hospital care into homes, disability settings, and community environments.",
+    commitment:
+      "Our Clinical Capability service exists to ensure no participant ever has to choose between staying in their community and receiving high-quality clinical care. We deploy Registered Nurses with specialist skills across emergency response, chronic disease management, complex wound care, and palliative support — working collaboratively with participants, families, and multidisciplinary teams to create care plans that are evidence-based, person-centred, and built around individual goals. Every interaction is underpinned by our commitment to clinical excellence, compassion, and the highest standards of safety.",
+    subServicesTitle: "Clinical Capability Services",
+    image: "/clinicall.jpg",
+    subServices: [
+      {
+        title: "Clinical Assessment & Care Planning",
+        points: [
+          "Comprehensive physical, psychosocial, and functional assessments by qualified Registered Nurses.",
+          "Development and implementation of individualised care plans in partnership with participants, families, and multidisciplinary teams.",
+          "Ongoing monitoring and evaluation to keep care plans aligned with participant goals and changing health needs.",
+        ],
+      },
+      {
+        title: "Medication Management & Administration",
+        points: [
+          "Safe administration of prescribed medications across oral, topical, subcutaneous, and intravenous routes.",
+          "Insulin administration and blood glucose monitoring for participants managing diabetes.",
+          "Medication side-effect monitoring, reporting, and participant education on medication regimes.",
+        ],
+      },
+      {
+        title: "IV Therapy & Infusion Management",
+        points: [
+          "IV setup, cannulation, and end-to-end management of intravenous therapy in community settings.",
+          "Monitoring of infusion sites for complications and adverse reactions.",
+          "Coordination with prescribing clinicians to ensure safe and effective infusion care.",
+        ],
+      },
+      {
+        title: "Wound Care & Management",
+        points: [
+          "Dressing changes, wound irrigation, and ongoing assessment of acute and chronic wounds.",
+          "Removal of sutures and staples in line with current clinical guidelines.",
+          "Infection control and preventive care to support optimal wound healing outcomes.",
+        ],
+      },
+      {
+        title: "Respiratory & Airway Support",
+        points: [
+          "Tracheostomy care and management to maintain airway patency and prevent complications.",
+          "Continuous monitoring of oxygen saturation levels and overall respiratory status.",
+          "Support with respiratory equipment and participant education on breathing techniques.",
+        ],
+      },
+      {
+        title: "Chronic Disease Management",
+        points: [
+          "Specialist support for participants living with diabetes, cardiac conditions, and other complex chronic illnesses.",
+          "Structured education on disease self-management, nutrition, lifestyle modification, and prevention.",
+          "Coordination with GPs and specialists for seamless, integrated long-term care.",
+        ],
+      },
+      {
+        title: "Emergency Care & Clinical Response",
+        points: [
+          "Rapid clinical assessment and triage in emergency or deteriorating situations.",
+          "ACLS-certified nurses available for high-acuity support, including chest pain and seizure management.",
+          "Clear emergency response protocols to ensure participant safety and swift escalation when needed.",
+        ],
+      },
+      {
+        title: "Palliative & End-of-Life Care",
+        points: [
+          "Compassionate end-of-life care focused on comfort, dignity, and quality of life.",
+          "Pain and symptom management delivered within established palliative care frameworks.",
+          "Emotional and psychological support for participants and their families throughout the care journey.",
+        ],
+      },
+      {
+        title: "Health Education & Discharge Planning",
+        points: [
+          "Tailored health education for participants and caregivers on self-care, prevention, and chronic condition management.",
+          "Instruction on home management of clinical devices including catheters, stomas, and infusion equipment.",
+          "Discharge planning and care transition support to ensure continuity and safety after hospital stays.",
+        ],
+      },
+      {
+        title: "Clinical Documentation & Team Coordination",
+        points: [
+          "Accurate, timely documentation of all clinical assessments, interventions, and outcomes.",
+          "Interpretation of diagnostic results and laboratory values to support informed clinical decision-making.",
+          "Active coordination with interdisciplinary teams — physicians, allied health, therapists, and social workers — for cohesive care delivery.",
+        ],
+      },
+    ],
+    qualifications: {
+      intro:
+        "Our Clinical Capability team is built on a foundation of rigorous formal training, specialist post-graduate study, and decades of hands-on experience across some of Canberra\u2019s most demanding clinical environments. Every nurse who delivers care under this service is AHPRA-registered, continuously upskilled, and deeply committed to person-centred practice.",
+      academicQualifications: [
+        {
+          qualification: "Post Graduate Certificate \u2014 Neuroscience",
+          institution: "University of Tasmania",
+        },
+        {
+          qualification: "Diploma in Nursing",
+          institution: "Muvonde School of Nursing",
+        },
+        {
+          qualification: "Diploma in Nursing",
+          institution: "Parirenyatwa School of Nursing",
+        },
+        {
+          qualification: "Secondary Education (foundational clinical pathway)",
+          institution: "Gutu Mission Hospital, Zimbabwe",
+        },
+      ],
+      certifications: [
+        {
+          title: "Registered Nurse (RN) \u2014 AHPRA",
+          description:
+            "All clinical staff are fully licensed and registered with the Australian Health Practitioner Regulation Agency.",
+        },
+        {
+          title: "Advanced Cardiac Life Support (ACLS)",
+          description:
+            "Certified in advanced cardiac life support protocols, equipping our team to manage high-acuity cardiac and emergency events with confidence.",
+        },
+        {
+          title: "Aged Care Quality & Safety Commission Standards",
+          description:
+            "Our nurses practise in accordance with current Aged Care Quality and Safety Commission standards, including dignity of care and restrictive practices guidelines.",
+        },
+        {
+          title: "Infection Control & Work Health and Safety",
+          description:
+            "Trained in up-to-date infection prevention protocols and workplace health and safety compliance across all care settings.",
+        },
+      ],
+      experienceIntro:
+        "Our team collectively holds more than 40 years of frontline nursing experience across tertiary hospitals, aged care, community, and specialist settings throughout Canberra and the ACT.",
+      experienceGroups: [
+        {
+          heading: "Acute & Hospital-Based Care",
+          points: [
+            "Long-term service at Canberra Health Services and The Canberra Hospital across multiple clinical units.",
+            "Endoscopy nursing \u2014 patient preparation, procedure assistance, consent documentation, and discharge education.",
+            "Recovery room nursing \u2014 post-procedure patient assessment, airway management, pain management, oxygenation and suctioning, and vital signs monitoring.",
+            "COVID-19 response roles including clinical swabbing, vaccination administration, and low-sensory clinic nursing.",
+          ],
+        },
+        {
+          heading: "Aged Care & Dementia Nursing",
+          points: [
+            "Dedicated Dementia Registered Nurse experience, including behavioural assessment and the application of restrictive practices guidelines for residents living with dementia.",
+            "Aged care nursing encompassing delirium assessments, care plan updates, incident reporting, and liaison with guardians and GPs.",
+            "Practice aligned with the Right of Dignity framework and aged care safety standards.",
+          ],
+        },
+        {
+          heading: "Community & Generalist Nursing",
+          points: [
+            "Over 15 years of community nursing across diverse patient populations, including NDIS participants, people with chronic illness, and those requiring post-acute care at home.",
+            "Administration of PRN and scheduled medications, insulin, blood glucose monitoring, and wound dressings in home and community settings.",
+            "Patient and family health education focused on self-management, prevention, and wellness.",
+          ],
+        },
+        {
+          heading: "Training, Preceptorship & Leadership",
+          points: [
+            "Formal preceptorship roles supporting the clinical development of new and graduate Registered Nurses.",
+            "Design and delivery of staff training programs to advance clinical care goals and uphold best practice standards.",
+            "Mentoring of nursing staff with a focus on medication safety, infection control, and person-centred care.",
+          ],
+        },
+        {
+          heading: "Emergency & Critical Response",
+          points: [
+            "Experienced in responding to emergency situations with speed and clinical expertise across hospital and community environments.",
+            "ACLS-certified with demonstrated competency in chest pain assessment, seizure management, and rapid patient deterioration protocols.",
+            "Skilled in prioritising critically ill patients based on assessment data and identified clinical need.",
+          ],
+        },
+      ],
+      cpdStatement:
+        "Our nurses are committed to lifelong learning and maintaining currency with evidence-based practice. This includes regular participation in continuing education programs, clinical seminars, and professional development activities \u2014 ensuring our team remains at the forefront of nursing practice, aged care standards, disability support frameworks, and community health innovation.",
+      skillsTable: [
+        { domain: "Assessment", skills: "Physical assessment, psychosocial assessment, delirium assessment, patient monitoring, medical screening" },
+        { domain: "Medications", skills: "Medication administration, insulin administration, PRN medications, IV therapy, blood glucose monitoring" },
+        { domain: "Procedures", skills: "Wound dressings, catheter care, tracheostomy care, endoscopy assistance, specimen collection" },
+        { domain: "Safety", skills: "Infection control, work health and safety, restrictive practices compliance, HIPAA/privacy protocols" },
+        { domain: "Documentation", skills: "Care plan development, incident reports, progress notes, discharge documentation, chart updating" },
+        { domain: "Education", skills: "Patient and family education, staff training, preceptorship, discharge planning" },
+        { domain: "Leadership", skills: "Unit administration, team coordination, quality improvement, multidisciplinary collaboration" },
+      ],
+    },
   },
   {
     slug: "community-nursing",

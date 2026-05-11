@@ -20,9 +20,10 @@ const stagger = {
 };
 
 const quickLinks = [
-  { label: "Transport", href: "/services/transport" },
-  { label: "Domestic Assistance", href: "/services/domestic-assistance" },
+  { label: "Clinical Capability", href: "/services/clinical-capability" },
   { label: "Community Nursing", href: "/services/community-nursing" },
+  { label: "Domestic Assistance", href: "/services/domestic-assistance" },
+  { label: "Transport", href: "/services/transport" },
 ] as const;
 
 export function BrightPvtServicesHero() {
@@ -77,9 +78,9 @@ export function BrightPvtServicesHero() {
             variants={fadeUp}
             className="mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-white/85 md:text-[17px]"
           >
-            Three integrated services — clinical, household, and transport —
-            designed around your everyday life and delivered by a team of
-            compassionate professionals.
+            Four integrated services — clinical capability, community nursing,
+            household support, and transport — designed around your everyday life
+            and delivered by a team of compassionate professionals.
           </motion.p>
 
           <motion.div

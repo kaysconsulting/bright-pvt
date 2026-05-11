@@ -26,6 +26,31 @@ export interface FormSubmissionResponse {
     ticketId?: string
 }
 
+export interface ReferralFormPayload {
+    referrerName: string
+    referrerEmail: string
+    referrerPhone?: string
+    referrerRole: string
+    organisationName?: string
+    clientFullName: string
+    clientPhone?: string
+    clientOkCall: boolean
+    clientOkSms: boolean
+    clientLocation: string
+    clientDobOrAge?: string
+    ndisNumber?: string
+    preferredLanguage?: string
+    servicesSought: string[]
+    reasonForReferral: string
+    urgency: 'routine' | 'soon' | 'urgent'
+    accessNotes?: string
+    gpDetails?: string
+    caseManagerDetails?: string
+    clinicalContext?: string
+    accuracyConfirmed: boolean
+    authorityConfirmed: boolean
+}
+
 const BASE_URL = 'https://ash-be-z3x4.onrender.com'
 const FORM_ENDPOINT = '/api/tickets/send-form-submission'
 const SUBSCRIPTIONS_ENDPOINT = '/api/subscriptions'
@@ -80,7 +105,42 @@ export class FormService {
         }
     }
 
-    // Helper method for contact form submissions — routes through Next.js API proxy to avoid CORS in production
+    static async sendReferralForm(
+        data: ReferralFormPayload
+    ): Promise<FormSubmissionResponse> {
+        try {
+            const response = await fetch('/api/referral', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            })
+
+            const result = await response.json().catch(() => ({}))
+
+            if (!response.ok) {
+                return {
+                    success: false,
+                    message:
+                        (typeof result.message === 'string' && result.message) ||
+                        `Request failed (${response.status})`,
+                }
+            }
+
+            return {
+                success: result.success ?? true,
+                message: result.message || 'Referral submitted successfully',
+                ticketId: result.ticketId,
+            }
+        } catch (error) {
+            console.error('Error sending referral form:', error)
+            return {
+                success: false,
+                message:
+                    error instanceof Error ? error.message : 'Failed to submit referral',
+            }
+        }
+    }
+
     static async sendContactForm(data: {
         customerName: string
         customerEmail: string
