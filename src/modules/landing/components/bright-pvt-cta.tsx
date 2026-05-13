@@ -143,7 +143,7 @@ export function BrightPvtCta() {
               className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4"
             >
               <a
-                href="tel:+61415405533"
+                href="tel:+611300296653"
                 className="group inline-flex items-center gap-2 rounded-full bg-white py-1.5 pl-5 pr-1.5 text-[15px] font-semibold text-purple-700 shadow-lg shadow-purple-900/25 transition hover:bg-white/95"
               >
                 <svg

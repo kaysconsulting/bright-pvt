@@ -57,13 +57,13 @@ export function BrightPvtFooter() {
 
             <div className="flex flex-col gap-2 text-[13px] text-slate-600">
               <a
-                href="tel:+61415405533"
+                href="tel:+611300296653"
                 className="inline-flex items-center gap-2 transition hover:text-slate-900"
               >
                 <svg aria-hidden viewBox="0 0 24 24" className="size-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l.93-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.08l.42.84Z" />
                 </svg>
-                +61 415 405 533
+                1300 296 653
               </a>
               <a
                 href="mailto:info@brightpvt.com.au"
