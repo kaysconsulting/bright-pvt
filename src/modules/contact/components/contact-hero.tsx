@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { BrightPvtNav } from "@/modules/shared/components/bright-pvt-nav";
 import { ContactForm } from "./contact-form";
@@ -20,8 +21,8 @@ const stagger = {
 const contactDetails = [
   {
     label: "Phone",
-    value: "+61 2 0000 0000",
-    href: "tel:+61200000000",
+    value: "+61 415 405 533",
+    href: "tel:+61415405533",
     icon: (
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l.93-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.08l.42.84Z" />
     ),
@@ -105,6 +106,20 @@ export function ContactHero() {
               Have a question about our services or want to get started with
               NDIS care? We&apos;d love to hear from you. Fill in the form or
               reach us directly below.
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 max-w-md text-[14px] leading-relaxed text-white/80"
+            >
+              Referring someone to our services? Use our{" "}
+              <Link
+                href="/referrals"
+                className="font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
+              >
+                referral form
+              </Link>
+              .
             </motion.p>
 
             <motion.div

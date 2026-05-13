@@ -133,7 +133,8 @@ export function BrightPvtCta() {
               className="mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-white/85 md:text-[17px]"
             >
               Reach out to our team and we&apos;ll match you with the right
-              services — nursing, domestic assistance, or transport — tailored
+              services — clinical capability, community nursing, domestic
+              assistance, or transport — tailored
               to your NDIS plan and your life.
             </motion.p>
 
@@ -142,7 +143,7 @@ export function BrightPvtCta() {
               className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4"
             >
               <a
-                href="tel:+61200000000"
+                href="tel:+61415405533"
                 className="group inline-flex items-center gap-2 rounded-full bg-white py-1.5 pl-5 pr-1.5 text-[15px] font-semibold text-purple-700 shadow-lg shadow-purple-900/25 transition hover:bg-white/95"
               >
                 <svg

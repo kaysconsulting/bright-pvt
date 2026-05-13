@@ -13,6 +13,14 @@ type Service = {
 
 const services: readonly Service[] = [
   {
+    title: "Clinical Capability",
+    blurb: "Hospital-grade expertise, in your community.",
+    description:
+      "Advanced clinical support delivered by qualified Registered Nurses — bringing the depth and precision of acute hospital care into homes, disability settings, and community environments.",
+    image: "/clinicall.jpg",
+    href: "/services/clinical-capability",
+  },
+  {
     title: "Community Nursing Care",
     blurb: "Skilled clinical care, at home.",
     description:
@@ -98,8 +106,9 @@ export function BrightPvtServices() {
             variants={fadeUp}
             className="max-w-md text-pretty text-[15px] leading-relaxed text-slate-600 md:text-base"
           >
-            Three integrated services — clinical, household, and transport —
-            delivered by a team of compassionate professionals across Canberra.
+            Four integrated services — advanced clinical capability, community
+            nursing, household support, and transport — delivered by a team of
+            compassionate professionals across Canberra.
           </motion.p>
         </motion.div>
 
@@ -108,7 +117,7 @@ export function BrightPvtServices() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
-          className="mt-12 grid gap-6 md:mt-16 lg:grid-cols-3"
+          className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 xl:grid-cols-4"
         >
           {services.map((service, i) => (
             <motion.li key={service.title} variants={fadeUp} className="group">
@@ -121,28 +130,20 @@ export function BrightPvtServices() {
                     src={service.image}
                     alt={service.title}
                     fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 bg-linear-to-t from-slate-950/35 via-slate-950/0 to-transparent"
-                  />
-
-                  <span
-                    aria-hidden
-                    className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-md backdrop-blur-md ring-1 ring-inset ring-white/15"
-                  >
-                    <span className="text-white/80">
-                      0{i + 1}
-                    </span>
-                    <span className="h-3 w-px bg-white/40" />
-                    {service.blurb}
-                  </span>
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-[20px] font-semibold tracking-tight text-slate-900 md:text-[22px]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    <span className="text-slate-400">{String(i + 1).padStart(2, "0")}</span>
+                    <span aria-hidden className="mx-2 text-slate-300">
+                      ·
+                    </span>
+                    {service.blurb}
+                  </p>
+                  <h3 className="mt-2 text-[20px] font-semibold tracking-tight text-slate-900 md:text-[22px]">
                     {service.title}
                   </h3>
                   <p className="mt-3 flex-1 text-pretty text-[14px] leading-relaxed text-slate-600">
