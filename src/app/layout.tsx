@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-S29DGWPB15";
 
 const genova = localFont({
   src: "../fonts/Genova.otf",
@@ -25,7 +28,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${genova.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans bg-stone-50 text-slate-900">{children}</body>
+      <body className="min-h-full flex flex-col font-sans bg-stone-50 text-slate-900">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
