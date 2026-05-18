@@ -3,11 +3,6 @@ export interface SubService {
   points: string[];
 }
 
-export interface QualificationRow {
-  qualification: string;
-  institution: string;
-}
-
 export interface CertificationItem {
   title: string;
   description: string;
@@ -25,7 +20,6 @@ export interface SkillRow {
 
 export interface ServiceQualifications {
   intro: string;
-  academicQualifications: QualificationRow[];
   certifications: CertificationItem[];
   experienceIntro: string;
   experienceGroups: ExperienceGroup[];
@@ -289,24 +283,6 @@ export const services: ServiceDetail[] = [
     qualifications: {
       intro:
         "Our Clinical Capability team is built on a foundation of rigorous formal training, specialist post-graduate study, and decades of hands-on experience across some of Canberra\u2019s most demanding clinical environments. Every nurse who delivers care under this service is AHPRA-registered, continuously upskilled, and deeply committed to person-centred practice.",
-      academicQualifications: [
-        {
-          qualification: "Post Graduate Certificate \u2014 Neuroscience",
-          institution: "University of Tasmania",
-        },
-        {
-          qualification: "Diploma in Nursing",
-          institution: "Muvonde School of Nursing",
-        },
-        {
-          qualification: "Diploma in Nursing",
-          institution: "Parirenyatwa School of Nursing",
-        },
-        {
-          qualification: "Secondary Education (foundational clinical pathway)",
-          institution: "Gutu Mission Hospital, Zimbabwe",
-        },
-      ],
       certifications: [
         {
           title: "Registered Nurse (RN) \u2014 AHPRA",
