@@ -67,54 +67,8 @@ export function BrightPvtServiceQualifications({ qualifications }: Props) {
           </motion.p>
         </motion.div>
 
-        {/* Academic qualifications + Certifications */}
-        <div className="mt-14 grid gap-6 md:mt-16 lg:grid-cols-2">
-
-          {/* Academic qualifications */}
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="overflow-hidden rounded-3xl border border-slate-900/8 bg-white p-6 ring-1 ring-inset ring-white md:p-8"
-          >
-            <motion.p
-              variants={fadeUp}
-              className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400"
-            >
-              Education
-            </motion.p>
-            <motion.h3
-              variants={fadeUp}
-              className="mt-2 text-[20px] font-semibold tracking-tight text-slate-900"
-            >
-              Academic Qualifications
-            </motion.h3>
-
-            <motion.div variants={stagger} className="mt-6 flex flex-col gap-3">
-              {qualifications.academicQualifications.map((row, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={fadeUp}
-                  className="flex items-start gap-4 rounded-2xl border border-slate-900/6 bg-stone-50 px-4 py-3.5"
-                >
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-purple-100 text-[11px] font-bold text-purple-700">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <p className="text-[14px] font-semibold leading-snug text-slate-900">
-                      {row.qualification}
-                    </p>
-                    <p className="mt-0.5 text-[12.5px] text-slate-500">
-                      {row.institution}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Certifications */}
+        {/* Certifications */}
+        <div className="mt-14 md:mt-16">
           <motion.div
             variants={stagger}
             initial="hidden"
